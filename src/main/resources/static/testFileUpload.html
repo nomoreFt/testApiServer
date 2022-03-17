@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="http://192.168.20.56:8080/custom/apiset.do" method="post" enctype="multipart/form-data">
+    Post 업로드 <br>
+  파일명 : <input type="file" name="file">
+    <input type="hidden" name="method" value="uploadFile">
+    <input type="hidden" name="fileName" value="B-100-인터페이스설계서(상세).xlsx">
+    <input type="hidden" name="folderPath" value="사이버다임">
+
+    <button type="submit">제출하기</button>
+</form>
+
+<br>
+<br>
+
+<form action="http://192.168.20.56:8080/custom/apiset.do" method="get" enctype="multipart/form-data">
+    Get 업로드 (실패 test)<br>
+    파일명 : <input type="file" name="myfile">
+    <input type="hidden" name="method" value="uploadFile">
+    <input type="hidden" name="fileName" value="hi.txt">
+    <input type="hidden" name="folderPath" value="사이버다임">
+    <button type="submit">제출하기</button>
+</form>
+
+
+<form action="api/getMultiFile" method="post" enctype="multipart/form-data">
+    Post 다운로드<br>
+    <input type="hidden" name="method" value="sendFileByFileOID">
+    <input type="hidden" name="fileOID" value="1N_MNNV_00w">
+    <button type="submit">제출하기</button>
+</form>
+
+<form action="api/getMultiFile" method="post" enctype="multipart/form-data">
+    Get 다운로드<br>
+    <input type="hidden" name="method" value="sendFileByFileOID">
+    <input type="hidden" name="fileOID" value="1N_MNNV_00w">
+    <button type="submit">제출하기</button>
+</form>
+
+
+</body>
+</html>
